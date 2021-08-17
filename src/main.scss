@@ -24,12 +24,21 @@ body {
   height: 1em;
   border-radius: 50%;
   background: lightblue;
+  /* Place the ball */
+  position: absolute;
+  left: -0.5em;
+  bottom: 1em;
 }
 
 .cube {
   width: 2em;
   height: 2em;
   background: var(--box-color);
+
+  /* place the box */
+  position: absolute;
+  top: -1em;
+  left: -1em;
 }
 
 .floor {
@@ -41,4 +50,6 @@ body {
     #222 90deg 180deg
   );
   background-size: 1em 1em;
+  /* Position of the floor */
+  position: absolute;
 }
