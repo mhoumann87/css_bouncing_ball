@@ -1,0 +1,2 @@
+# No need to commit css files, just compile the sass
+dist/css
