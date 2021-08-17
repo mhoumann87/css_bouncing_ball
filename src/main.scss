@@ -1,5 +1,5 @@
 :root {
-  --boxColor: #0ff7;
+  --box-color: #0ff7;
 }
 
 body {
@@ -8,4 +8,37 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  /* The font size is used to control the size of the elements,
+  this is possible because there are no text on the page */
+  font-size: 75px;
+}
+
+.scene {
+  position: relative;
+}
+
+.ball {
+  /* Size is based on font-size in body */
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background: lightblue;
+}
+
+.cube {
+  width: 2em;
+  height: 2em;
+  background: var(--box-color);
+}
+
+.floor {
+  width: 5em;
+  height: 5em;
+  background-image: repeating-conic-gradient(
+    from 45deg,
+    #111 0deg 90deg,
+    #222 90deg 180deg
+  );
+  background-size: 1em 1em;
 }
