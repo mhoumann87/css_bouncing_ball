@@ -1,6 +1,7 @@
 :root {
   --box-color: #0ff7;
   --rotate-speed: 30s;
+  --bounce-speed: 1.5s;
 }
 
 body {
@@ -47,8 +48,20 @@ body {
   /* Add light to the ball */
   background-image: radial-gradient(circle at top, lightblue, #000);
 
-  /* Fake the circle being a globe */
-  animation: scene-rotate var(--rotate-speed) infinite linear reverse;
+  /* F ake the circle being a globe */
+  animation: bounce-ball var(--bounce-speed) infinite ease-out,
+    scene-rotate var(--rotate-speed) infinite linear reverse;
+
+  @keyframes bounce-ball {
+    0%,
+    100% {
+      bottom: 1em;
+    }
+    50% {
+      bottom: 3em;
+      animation-timing-function: ease-in;
+    }
+  }
 }
 
 /* Add the shadow for the ball */
@@ -56,7 +69,23 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: radial-gradient(#0007, #0000 50%);
+  background-image: radial-gradient(#000, #0000 50%);
+
+  /* Animate the shadow to follow the ball */
+  animation: ball-shadow var(--bounce-speed) infinite ease-out;
+
+  @keyframes ball-shadow {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(2);
+      opacity: 0.5;
+      animation-timing-function: ease-in;
+    }
+  }
 }
 
 .cube {
