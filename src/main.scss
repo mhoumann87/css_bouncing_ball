@@ -52,6 +52,8 @@ body {
     width: 100%;
     height: 100%;
     background: var(--box-color);
+    /* Add "light" to box */
+    box-shadow: 0 0 0.5em #000a inset;
   }
 
   .front {
@@ -76,6 +78,19 @@ body {
     height: 2em;
     background: var(--box-color);
     transform: translateY(-50%) rotateX(90deg);
+    /* Add "light" to top */
+    box-shadow: 0 0 0.5em #000a inset;
+  }
+
+  .bottom {
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    background: #fff7;
+    bottom: 0;
+    transform: translateY(50%) rotateX(90deg);
+    /* Add light to bottom */
+    box-shadow: 0 0 0.5em #000a;
   }
 }
 
